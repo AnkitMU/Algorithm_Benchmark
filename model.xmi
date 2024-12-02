@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:version="2.1">
+    <uml:Model xmi:type="uml:Model" name="ComplexModel">
+        <uml:Class xmi:type="uml:Class" xmi:id="PersonClass" name="Person">
+            <uml:Property name="name" type="String" visibility="public"/>
+            <uml:Property name="age" type="Integer" visibility="public"/>
+            <uml:Property name="address" type="String" visibility="public"/>
+            <uml:Operation name="getDetails" visibility="public"/>
+            <uml:Operation name="updateAddress" visibility="public"/>
+        </uml:Class>
+        
+        <uml:Class xmi:type="uml:Class" xmi:id="EmployeeClass" name="Employee">
+            <uml:Property name="employeeID" type="Integer" visibility="public"/>
+            <uml:Property name="department" type="String" visibility="public"/>
+            <uml:Operation name="calculateSalary" visibility="public"/>
+            <uml:Operation name="promote" visibility="public"/>
+        </uml:Class>
+        
+        <uml:Class xmi:type="uml:Class" xmi:id="ManagerClass" name="Manager">
+            <uml:Property name="managedTeams" type="Integer" visibility="public"/>
+            <uml:Property name="budget" type="Float" visibility="public"/>
+            <uml:Operation name="approveBudget" visibility="public"/>
+            <uml:Operation name="assignTask" visibility="public"/>
+        </uml:Class>
+        
+        <uml:Association xmi:type="uml:Association" xmi:id="Association1" memberEnd="PersonClass EmployeeClass">
+            <uml:ownedEnd type="PersonClass" visibility="public" aggregation="none"/>
+            <uml:ownedEnd type="EmployeeClass" visibility="public" aggregation="shared"/>
+        </uml:Association>
+
+        <uml:Association xmi:type="uml:Association" xmi:id="Association2" memberEnd="EmployeeClass ManagerClass">
+            <uml:ownedEnd type="EmployeeClass" visibility="public" aggregation="none"/>
+            <uml:ownedEnd type="ManagerClass" visibility="public" aggregation="composite"/>
+        </uml:Association>
+    </uml:Model>
+</XMI>

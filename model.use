@@ -1,0 +1,41 @@
+model ExtractedModel
+
+class Person
+attributes
+  name:String
+  age:Integer
+  address:String
+operations
+  getDetails()
+  updateAddress()
+end
+
+class Employee
+attributes
+  employeeID:Integer
+  department:String
+operations
+  calculateSalary()
+  promote()
+end
+
+class Manager
+attributes
+  managedTeams:Integer
+  budget:Real
+operations
+  approveBudget()
+  assignTask()
+end
+
+-- associations
+
+association Association_Association1 between
+  Person [0..*] role personRole
+  Employee [0..*] role employeeRole
+end
+
+association Association_Association2 between
+  Employee [0..*] role employeeRole
+  Manager [0..*] role managerRole
+end

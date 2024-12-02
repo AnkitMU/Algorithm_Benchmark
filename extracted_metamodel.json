@@ -1,0 +1,29 @@
+{
+    "classes": {
+        "Person": {
+            "name": "String",
+            "age": "Integer",
+            "address": "String"
+        },
+        "Employee": {
+            "employeeID": "Integer",
+            "department": "String"
+        },
+        "Manager": {
+            "managedTeams": "Integer",
+            "budget": "Float"
+        }
+    },
+    "relationships": [
+        {
+            "source": "Person",
+            "target": "Employee",
+            "name": "Person_to_Employee"
+        },
+        {
+            "source": "Employee",
+            "target": "Manager",
+            "name": "Employee_to_Manager"
+        }
+    ]
+}

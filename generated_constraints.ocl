@@ -1,0 +1,15 @@
+context Person
+    inv Constraint1: self.age < 48
+
+context Person
+    inv Constraint2: self.age >= 1
+
+context Person
+    inv Constraint3: self.age <= 70
+
+context Person
+    inv Constraint4: self.age <= 61
+
+context Person
+    inv Constraint5: self.age <= 31
+
